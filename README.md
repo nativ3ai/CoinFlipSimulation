@@ -1,10 +1,7 @@
 # 🐳 Coin Flip Simulation - Docker Edition
 
-**🔧 ISSUE FIXED**: Added missing Flask-CORS dependency
 
 Run the complete coin flip simulation with a single Docker command!
-
-## 🚀 Super Easy Setup
 
 ### Prerequisites
 - Docker
@@ -21,12 +18,6 @@ That's it! 🎉
 
 Once running, open your browser and go to:
 **http://localhost:8080**
-
-## 🔧 What Was Fixed
-
-- ✅ Added `Flask-CORS==5.0.0` to requirements.txt
-- ✅ Backend now properly handles CORS for frontend communication
-- ✅ All services should start without errors
 
 ## 🎯 What You Get
 
