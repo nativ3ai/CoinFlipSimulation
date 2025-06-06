@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5001:5000"
+    environment:
+      - FLASK_ENV=production
+      - PYTHONPATH=/app
+    networks:
+      - coin-flip-network
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - coin-flip-network
+    restart: unless-stopped
+
+  # Nginx reverse proxy to serve both frontend and backend
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - coin-flip-network
+    restart: unless-stopped
+
+networks:
+  coin-flip-network:
+    driver: bridge
+
