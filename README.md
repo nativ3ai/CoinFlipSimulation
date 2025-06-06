@@ -1,4 +1,4 @@
-# 🐳 Coin Flip Simulation - Docker Edition (FIXED)
+# 🐳 Coin Flip Simulation - Docker Edition
 
 **🔧 ISSUE FIXED**: Added missing Flask-CORS dependency
 
